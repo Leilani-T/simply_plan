@@ -1,0 +1,54 @@
+<!DOCTYPE html> <!-- Setting up the main dashboard -->
+
+<style>
+    .date {
+      background-color: white;
+      color: black;
+      font-family: gill sans, sans-serif;
+      font-size: 18px;
+      font-weight: bold;
+      border: 2px solid white;
+      margin: 20px;
+      padding: 20px;
+    }
+
+    .links{
+        color: #3C99DC;
+        font-family: gill sans, sans-serif;
+    }
+
+    a:visited {
+        color: inherit;
+    }
+
+    .dash {
+        width: 100%;
+        border-collapse:collapse;
+    }
+</style>
+
+
+<html lang="en">
+    <head>
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+        <title>Study!</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/task-style.css') }}">
+    </head>
+    <body> 
+        <div>
+        <table class="dash">
+            <thead>
+                <tr>
+                    <td class="date"> Dashboard </td>
+                    <td class="links"><a href="https://moodle-2324.wooster.edu/login/index.php" target="_blank"> Moodle </a></td>
+                    <td class="links"><a href="https://ellucianselfservice.wooster.edu/Student/Account/Login?ReturnUrl=%2fStudent" target="_blank"> Self-Service </a></td>
+                    <td class="links"><a href="https://wooster.edu/library/" target="_blank"> Libraries </a></td>
+                </tr>
+            </thead>
+        </table>
+        </div>
+        {% block body %}{% endblock %}
+    </body>
+</html>
+
+

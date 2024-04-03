@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<style>
+    .item1 { grid-area: todo; }
+    .item2 { grid-area: block; }
+    .item3 { grid-area: upcom; }
+    .item4 { grid-area: week; }
+
+    .grid-container {
+        display: grid;
+        grid-template-areas:
+            'todo upcom upcom upcom block block'
+            'todo week week week block block';
+        gap: 5px;
+        background-color: #2196F3;
+    }
+
+    .grid-container > div {
+        background-color: rgba(255, 255, 255, 0.8);
+        text-align: center;
+        padding: 20px 0;
+        font-size: 25px;
+    }
+</style>
+
+
+<body>
+<div class="grid-container">
+
+  <div class="item1">
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>&ensp;&ensp;&ensp;&ensp;To Do&nbsp;</th>
+                <th>&ensp;&ensp;<input type="submit" value="+"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- {% for assignment in todo_list %} -->
+                <tr>
+                   <!-- <td><input type="checkbox"></td> -->
+                   <td>check</td>
+                    <td>&ensp; Items &ensp;</td>
+                    <td>end</td>
+                </tr>
+            <!-- {% endfor %} -->
+        </tbody>
+    </table>
+  </div>
+    
+  <div class="item2">Today</div> 
+
+  <div class="item3">
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th> Coming Up &nbsp;</th>
+                <th> </th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- {% for assignment in todo_list %} -->
+                <tr>
+                    <td>Icon</td>
+                    <td>Assignment Details;</td>
+                    <td>Due Date</td>
+                </tr>
+            <!-- {% endfor %} -->
+        </tbody>
+    </table>
+    
+
+  </div>
+  <div class="item4">This Week</div>
+</div>
+
+</body>
+
+{% endblock %}
+
